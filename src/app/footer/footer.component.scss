@@ -1,0 +1,115 @@
+.footer {
+  background: var(--bg-dark); /* Using global dark background */
+  color: var(--text-color-light); /* Using global light text color */
+  padding: var(--spacing-xxl) var(--spacing-xl); /* Using global spacing */
+  font-family: var(--font-primary);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: var(--spacing-xxl); /* Using global spacing */
+  max-width: 1200px; /* Constrain width like container */
+  margin: 0 auto; /* Center the container */
+}
+
+.footer-col h3 {
+  margin-bottom: var(--spacing-md);
+  font-size: 1.2rem; /* Adjusted font size */
+  font-family: var(--font-secondary); /* Use secondary font for headings */
+  color: var(--text-color-light); /* Ensure heading is light */
+}
+
+.logo {
+  font-size: 2rem; /* Adjusted font size */
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  color: var(--primary-color); /* Use primary green for logo */
+}
+
+.footer-col p {
+  font-size: 0.9rem; /* Adjusted font size */
+  line-height: 1.7;
+  color: var(--secondary-color); /* Slightly lighter text for paragraphs */
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2); /* Lighter dashed border */
+  cursor: pointer;
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li:hover {
+  color: var(--primary-color); /* Hover to primary green */
+}
+
+.visitor-box {
+  margin-top: var(--spacing-md);
+  background: var(--primary-color); /* Primary green background */
+  color: var(--text-color-light);
+  padding: var(--spacing-sm) var(--spacing-md);
+  width: fit-content;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.85rem;
+  box-shadow: var(--box-shadow-sm);
+}
+
+.visitor-box strong {
+  display: block;
+  font-size: 1.3rem;
+  text-align: center;
+  font-family: var(--font-secondary);
+}
+
+.contact p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--secondary-color);
+}
+
+
+@media (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr; /* Two columns on tablet */
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    text-align: center;
+  }
+}
+
+@media (max-width: 426px) { /* Added breakpoint for very small mobiles */
+  .footer {
+    padding: var(--spacing-lg) var(--spacing-sm); /* Even smaller padding */
+  }
+  .footer-col h3 {
+    font-size: 1.1rem;
+  }
+  .footer-col p {
+    font-size: 0.8rem;
+  }
+  .logo {
+    font-size: 1.8rem;
+  }
+  .visitor-box {
+    font-size: 0.75rem;
+  }
+  .visitor-box strong {
+    font-size: 1.1rem;
+  }
+}

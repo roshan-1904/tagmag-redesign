@@ -1,0 +1,60 @@
+<section class="about-hero" [style.backgroundPosition]="heroBackgroundPosition">
+  <div class="overlay"></div>
+
+  <div class="about-content" [@heroAnimation]="showHero">
+    <h1>About Us</h1>
+    <p><strong>GST no:</strong> 33AAACT9933AIZM</p>
+    <p><strong>PAN no:</strong> AAACT9933A</p>
+
+    <div class="breadcrumb">
+      <span>Home</span> » <span class="active">About TANMAG</span>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" [@scrollAnimation]="showContent">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-left" [@staggerFadeIn]="showContent">
+        <h2>About TAMILNADU MAGNESITE LIMITED</h2>
+        <p>
+          TAMILNADU MAGNESITE LIMITED (TANMAG) is a pioneering public sector undertaking committed to responsible mining and sustainable industrial development. Established with a vision to harness the rich magnesite reserves of Tamil Nadu, we play a crucial role in supplying high-quality raw materials to essential industries, particularly the steel sector. Our operations adhere to strict environmental guidelines, ensuring minimal ecological impact and promoting biodiversity in our mining areas.
+        </p>
+        <p>
+          With a strong focus: 'Innovation, TANMAG continuously invests in research and development to enhance the quality and versatility of our magnesite products. Our dedicated team of experts works tirelessly to meet the evolving demands of the steel, refractory, and chemical industries, contributing significantly to the nation's industrial self-reliance. We are proud to be a government-owned enterprise, serving the public interest with transparency and accountability.
+        </p>
+        <ul>
+          <li><span>Strategic Importance:</span> A key contributor to national industrial growth and mineral resource management.</li>
+          <li><span>Sustainable Practices:</span> Committed to environmental stewardship, responsible land reclamation, and community development.</li>
+          <li><span>Quality & Innovation:</span> Delivering superior magnesite products through continuous process improvement and cutting-edge research.</li>
+          <li><span>Economic Impact:</span> Generating employment and contributing to the socio-economic development of the region.</li>
+        </ul>
+        <button class="btn-primary">Learn More About Our Mission</button>
+      </div>
+
+      <!-- Right Column: Image with Overlay -->
+      <div class="col-right">
+        <div class="image-wrapper">
+          <img src="https://tanmag.org/design/images/background/bg5.jpg" alt="TANMAG Mining Operations" class="about-image">
+          <div class="image-overlay">
+            <h3>Innovating for the Future</h3>
+            <p>Driving industrial excellence with integrity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="objective-box">
+  <h2>TANMAG's objectives :</h2>
+
+  <ul>
+    <li>SUSTAINABLE EXPLOITATION OF THE MINERAL WEALTH TOWARDS THE INDUSTRIAL GROWTH.</li>
+    <li>PROMOTING SOCIO-ECONOMIC DEVELOPMENT OF THE REGION.</li>
+    <li>PROTECTING THE ENVIRONMENT AND PRESERVING THE ECOLOGY OF THE REGION.</li>
+    <li>OPTIMAL UTILISATION OF MINERAL BY BROADENING PRODUCT RANGE.</li>
+    <li>BUILDING LONG TERM COMMITTED RELATIONSHIP WITH CUSTOMER.</li>
+  </ul>
+</div>

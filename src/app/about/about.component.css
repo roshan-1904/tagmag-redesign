@@ -1,0 +1,356 @@
+:host {
+  /* Using global CSS variables now */
+}
+
+/* About Hero Section */
+.about-hero {
+  position: relative;
+  width: 100%; /* Full width */
+  height: 60vh;
+  background-image: url("https://tanmag.org/design/images/banner/5a.jpg"); /* Keep user's specified image */
+  background-size: cover;
+  background-position: center; /* This will be overridden by [style.backgroundPosition] */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--spacing-xl) var(--spacing-xxl); /* Using global spacing */
+  color: var(--text-color-light);
+  overflow: hidden; /* Ensure content doesn't spill */
+}
+
+.about-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1));
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  /* Angular's heroAnimation trigger will handle initial opacity and transform */
+}
+
+.about-content h1 {
+  font-size: 3.5rem; /* Adjusted using rem and global font size strategy */
+  font-weight: 800;
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: -0.5px;
+  font-family: var(--font-secondary);
+  color: var(--text-color-light); /* Ensure it stays white on dark hero */
+}
+
+.about-content p {
+  margin-top: var(--spacing-sm);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: var(--font-primary);
+  color: var(--text-color-light); /* Ensure it stays white on dark hero */
+}
+
+.breadcrumb {
+  margin-top: var(--spacing-md);
+  font-size: 0.9rem;
+}
+
+.breadcrumb span {
+  color: var(--accent-color); /* Gold accent for breadcrumb link */
+}
+
+.breadcrumb .active {
+  color: var(--text-color-light);
+  font-weight: 500;
+}
+
+/* Main Content Section */
+.about-section {
+  padding: var(--spacing-xxl) 0; /* Using global spacing */
+  background-color: var(--bg-section); /* Light grey background for section */
+  color: var(--text-color-dark);
+  font-family: var(--font-primary);
+  overflow: hidden;
+  position: relative;
+  /* Angular's scrollAnimation trigger will handle initial opacity and transform */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xxl); /* Using global spacing */
+  background-color: var(--bg-light); /* White background for content block */
+  border-radius: var(--border-radius-lg); /* Using global border radius */
+  box-shadow: var(--box-shadow-lg); /* Using global shadow */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-xxl); /* Using global spacing */
+  margin-top: -80px; /* Overlap with hero section */
+  position: relative;
+  z-index: 1;
+}
+
+/* Left Column */
+.col-left {
+  flex: 1;
+  min-width: 300px;
+  padding-right: var(--spacing-md); /* Using global spacing */
+  margin: var(--spacing-md) 0; /* Adjusted margin */
+}
+
+.col-left h2 {
+  font-family: var(--font-secondary);
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-lg); /* Using global spacing */
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+.col-left p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: var(--spacing-lg); /* Using global spacing */
+}
+
+.col-left ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.col-left ul li {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md); /* Using global spacing */
+  position: relative;
+  padding-left: var(--spacing-xl); /* Using global spacing */
+}
+
+.col-left ul li::before {
+  content: '✓';
+  color: var(--accent-color); /* Use accent color for checkmark */
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 1.3rem;
+  top: -2px;
+}
+
+.col-left ul li span {
+  font-weight: bold;
+  color: var(--primary-color); /* Highlight with primary color */
+}
+
+
+
+/* Right Column: Image with Overlay */
+.col-right {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  height: 450px;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--box-shadow-lg);
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.0);
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease-out;
+}
+
+.image-wrapper:hover .about-image {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 91, 91, 0.85); /* Use primary-color with rgba */
+  color: var(--text-color-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-lg);
+  transition: background 0.3s ease-in-out;
+}
+
+.image-wrapper:hover .image-overlay {
+  background: rgba(15, 91, 91, 0.7); /* Lighter on hover */
+}
+
+.image-overlay h3 {
+  font-size: 1.9rem;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: 0.5px;
+  font-family: var(--font-secondary);
+}
+
+.image-overlay p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  font-family: var(--font-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .row {
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    margin-top: 0;
+  }
+
+  .container {
+    padding: var(--spacing-lg);
+  }
+
+  .col-left, .col-right {
+    min-width: unset;
+    width: 100%;
+    padding-right: 0;
+    margin: 0; /* Remove specific margin */
+  }
+
+  .col-right {
+    height: 400px;
+  }
+
+  .about-section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .col-left h2 {
+    font-size: 2.2rem;
+  }
+
+  .about-hero {
+    padding: var(--spacing-lg);
+  }
+
+  .about-content h1 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content h1 {
+    font-size: 2rem;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .about-section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .container {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+  }
+
+  .col-left h2 {
+    font-size: 1.8rem;
+  }
+
+  .col-left p {
+    font-size: 1rem;
+  }
+
+  .col-left ul li {
+    font-size: 0.95rem;
+    padding-left: var(--spacing-xl);
+  }
+
+  .col-left ul li::before {
+    font-size: 1.1rem;
+  }
+
+  .cta-button { /* Use global btn-primary */
+    padding: var(--spacing-sm) var(--spacing-xl);
+    font-size: 0.9rem;
+  }
+
+  .col-right {
+    height: 300px;
+  }
+
+  .image-overlay h3 {
+    font-size: 1.5rem;
+  }
+
+  .image-overlay p {
+    font-size: 1rem;
+  }
+
+  .about-hero {
+    height: 40vh;
+    padding: var(--spacing-md);
+  }
+
+  .about-content h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Objective Box (Assuming it's a separate section within about) */
+.objective-box {
+  max-width: 900px;
+  margin: var(--spacing-xxl) auto;
+  background: var(--bg-section); /* Using global light grey for section background */
+  padding: var(--spacing-xl) var(--spacing-xxl);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-sm);
+}
+
+.objective-box h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  color: var(--primary-color);
+  font-family: var(--font-secondary);
+}
+
+.objective-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.objective-box li {
+  position: relative;
+  padding-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.95rem;
+  color: var(--text-color-dark);
+  line-height: 1.6;
+}
+
+.objective-box li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}

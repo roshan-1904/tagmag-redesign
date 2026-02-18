@@ -1,0 +1,65 @@
+<div class="slider">
+
+  <div class="slide"
+       *ngFor="let slide of slides; let i = index"
+       [class.active]="i === current"
+       [style.backgroundImage]="'url(' + slide.img + ')'"
+>
+
+    <div class="overlay" [@sliderContentAnimation]="i === current ? 'show' : 'void'">
+      <h1>{{ slide.title }}</h1>
+      <p>{{ slide.desc }}</p>
+      <a class="btn-primary">READ MORE</a>
+    </div>
+  </div>
+
+  <button class="nav prev" (click)="prev()">❮</button>
+  <button class="nav next" (click)="next()">❯</button>
+
+</div>
+
+
+<div class="info-section container" [@sectionFadeIn]="infoSectionState">
+  <div class="left" [@itemStaggerFadeIn]="infoSectionState">
+    <div class="tag green">UPCOMING MEETING</div>
+    <div class="tag black">TENDER / PURCHASE</div>
+
+    <div class="list">
+      <div class="item">Annual Report</div>
+      <div class="item">Environment Clearance Certificate</div>
+      <div class="item">Download RTI Act Manual</div>
+    </div>
+  </div>
+
+  <div class="right">
+    <img src="https://tanmag.org/design/images/qq1.png" alt="TANMAG Info Image">
+  </div>
+</div>
+
+
+<div class="header-box">
+  <h1>Welcome TANMAG </h1>
+</div>
+
+
+<section class="tanmag-section container" [@sectionFadeIn]="tanmagSectionState">
+  <div class="content-box" [@itemStaggerFadeIn]="tanmagSectionState">
+    <h1>
+      TAMILNADU<br>
+      MAGNESITE<br>
+      LIMITED <span>popularly known as</span><br>
+      <b>TANMAG</b> <span>since January 1979</span>
+    </h1>
+
+    <p>
+      Magnesite Mineral Ore is an essential raw material for manufacturing
+      Refractory Materials used by Steel Industry.
+    </p>
+
+    <button class="btn-primary">READ MORE</button>
+  </div>
+
+  <div class="image-box">
+    <img src="	https://tanmag.org/design/images/about-slider/1-ab.jpg" alt="TANMAG Workers">
+  </div>
+</section>

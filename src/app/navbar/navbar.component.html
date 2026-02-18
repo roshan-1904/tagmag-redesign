@@ -1,0 +1,24 @@
+<section>
+  <div class="box" [class.scrolled-navbar]="scrolled">
+          <div class="nav-left">
+               <img src="https://tanmag.org/design/images/z1.png" alt=""  width="200px" height="50px">
+          </div>
+
+            <div class="nav-right" [class.open]="isMenuOpen">
+                 <div routerLink="/" (click)="toggleMenu()">Home</div>
+                 <div (click)="goAbout()">About us</div>
+                 <div (click)="toggleMenu()">Product Range</div>
+                 <div (click)="toggleMenu()">Mining Activities</div>
+                 <div (click)="toggleMenu()">production Divisions</div>
+                 <div (click)="toggleMenu()">Quality Control</div>
+                 <div (click)="toggleMenu()">News&Control</div>
+                 <div (click)="toggleMenu()">Contact us</div>
+            </div>
+
+            <button class="hamburger" (click)="toggleMenu()">
+              <span class="bar" [class.open]="isMenuOpen"></span>
+              <span class="bar" [class.open]="isMenuOpen"></span>
+              <span class="bar" [class.open]="isMenuOpen"></span>
+            </button>
+            </div>
+     </section>

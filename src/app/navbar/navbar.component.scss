@@ -1,0 +1,211 @@
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-xxl);
+  background-color: var(--bg-dark); /* Initial dark background */
+  color: var(--text-color-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--box-shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease; /* Add transition for padding and shadow */
+}
+
+.box.scrolled-navbar {
+  background-color: var(--bg-light); /* Light background on scroll */
+  padding: var(--spacing-sm) var(--spacing-xxl); /* Smaller padding on scroll */
+  box-shadow: var(--box-shadow-sm); /* More subtle shadow on scroll */
+  color: var(--text-color-dark); /* Dark text on scroll */
+
+  .nav-left img {
+    filter: none; /* Revert logo filter on scroll if it was inverted */
+  }
+
+  .nav-right div {
+    color: var(--text-color-dark); /* Dark text for nav items on scroll */
+  }
+
+  .nav-right div:hover {
+    color: var(--primary-color); /* Primary color on hover for scrolled state */
+  }
+
+  .nav-right div::after {
+    background: var(--primary-color); /* Primary color for underline on scroll */
+  }
+}
+
+.nav-left img {
+  display: block;
+  height: 60px;
+  width: auto;
+  filter: brightness(0) invert(1); /* Initial filter for light logo on dark bg */
+  transition: filter 0.3s ease, height 0.3s ease; /* Transition for filter and height */
+}
+
+.box.scrolled-navbar .nav-left img {
+  height: 50px; /* Smaller logo on scroll */
+}
+
+.nav-right {
+  display: flex;
+  flex-wrap: nowrap; /* Ensure items stay in one line */
+  gap: var(--spacing-xl);
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--font-primary);
+  /* New: For mobile menu, default to hidden and flex column */
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  position: static;
+  width: auto;
+  background-color: transparent;
+  box-shadow: none;
+  transition: none;
+  z-index: auto;
+}
+
+.nav-right div {
+  color: var(--text-color-light);
+  text-decoration: none;
+  cursor: pointer;
+  padding: var(--spacing-sm) 0;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  white-space: nowrap; /* Prevent text wrapping within item */
+}
+
+.nav-right div::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: var(--spacing-xs);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-color); /* Gold accent for underline */
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-right div:hover {
+  color: var(--accent-color);
+}
+
+.nav-right div:hover::after {
+  width: 100%;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001; /* Above mobile menu */
+  margin-left: var(--spacing-md);
+}
+
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--text-color-light); /* White bars initially */
+  transition: all 0.3s ease-in-out;
+}
+
+.box.scrolled-navbar .hamburger .bar {
+  background-color: var(--text-color-dark); /* Dark bars when scrolled */
+}
+
+/* Animation for hamburger */
+.hamburger .bar.open:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger .bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger .bar.open:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .box {
+    padding: var(--spacing-md) var(--spacing-xl);
+  }
+  .nav-left img {
+    height: 50px;
+  }
+  .nav-right {
+    gap: var(--spacing-lg);
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .box {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .nav-right { /* Mobile menu overlay */
+    position: fixed;
+    top: 0;
+    right: -100%; /* Initially off-screen */
+    width: 70%;
+    max-width: 300px;
+    height: 100%;
+    background-color: var(--bg-dark); /* Dark background for mobile menu */
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--spacing-xxl) var(--spacing-lg);
+    gap: var(--spacing-sm);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .nav-right.open {
+    right: 0; /* Slide in */
+  }
+
+  .nav-right div {
+    color: var(--text-color-light); /* Ensure links are white in mobile menu */
+    padding: var(--spacing-md) 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-right div:last-child {
+    border-bottom: none;
+  }
+
+  .nav-right div::after {
+    left: 0;
+    transform: translateX(0);
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger on small screens */
+    order: 2; /* Place hamburger on the right */
+  }
+}
+
+@media (max-width: 426px) { /* Added breakpoint for very small mobiles */
+  .box {
+    padding: var(--spacing-xs) var(--spacing-sm); /* Even smaller padding */
+  }
+  .nav-left img {
+    height: 40px; /* Smaller logo */
+  }
+  .nav-right {
+    width: 80%; /* Slightly wider mobile menu on very small screens */
+  }
+}
+
