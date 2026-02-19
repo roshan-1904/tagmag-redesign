@@ -52,7 +52,7 @@
   display: flex;
   flex-wrap: nowrap; /* Ensure items stay in one line */
   gap: var(--spacing-xl);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   font-family: var(--font-primary);
   /* New: For mobile menu, default to hidden and flex column */
