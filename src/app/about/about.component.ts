@@ -29,16 +29,16 @@ import { trigger, state, style, transition, animate, query, stagger, group } fro
       })),
       transition('hide => show', animate('1000ms ease-out')),
     ]),
-    trigger('staggerFadeIn', [ // New trigger for staggered text
-      transition('hide => show', [ // Animate when state changes from hide to show
+    trigger('staggerFadeIn', [
+      transition('hide => show', [ 
         query(':enter', [
           style({ opacity: 0, transform: 'translateY(20px)' }),
-          stagger('100ms', [ // Stagger each item by 100ms
+          stagger('100ms', [ 
             animate('500ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
           ])
         ], { optional: true })
       ]),
-      transition('show => hide', [ // Animate out
+      transition('show => hide', [ 
         query(':leave', [
           stagger('50ms', [
             animate('200ms ease-in', style({ opacity: 0, transform: 'translateY(20px)' }))
@@ -85,7 +85,7 @@ export class AboutComponent implements OnInit {
       const scrollY = window.pageYOffset;
       // Calculate a slower scroll rate for the background
       // This makes the background move less than the foreground
-      const parallaxSpeed = 0.3; // Adjust this value for desired parallax intensity
+      const parallaxSpeed = 0.3; 
       const backgroundY = -(scrollY * parallaxSpeed);
       this.heroBackgroundPosition = `center ${backgroundY}px`;
     }
