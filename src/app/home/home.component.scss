@@ -447,3 +447,73 @@
 .slide.active {
   opacity: 1;
 }
+
+
+:root {
+  --secondary-color: #d4a017; /* change this to your theme color */
+}
+
+.objectives-container {
+  background: #f2f2f2;
+  padding: 60px;
+  max-width: 1000px;
+  margin: 5% 14%;
+  border-radius: 10px; /* Added border-radius */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+  animation: fadeInSlideUp 1s ease-out forwards; /* Added animation */
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.objectives-container h2 {
+ 
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.objectives-list {
+  list-style: none;
+  padding: 0;
+}
+
+.objectives-list li {
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  padding-left: 25px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+
+.objectives-list li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  font-size: 18px;
+  transition: all 0.4s ease;
+}
+
+.objectives-list li:hover {
+   color: rgb(27, 156, 156);
+  color: var(--secondary-color);
+  transform: translateX(10px);
+}
+
+
+.objectives-list li:hover::before {
+  color: rgb(27, 156, 156);
+  color: var(--secondary-color);
+  transform: translateX(5px);
+}
