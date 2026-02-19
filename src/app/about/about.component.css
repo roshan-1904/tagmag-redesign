@@ -213,7 +213,7 @@
   font-family: var(--font-primary);
 }
 
-/* Responsive Design */
+
 @media (max-width: 992px) {
   .row {
     flex-direction: column;
@@ -287,7 +287,7 @@
     font-size: 1.1rem;
   }
 
-  .cta-button { /* Use global btn-primary */
+  .cta-button { 
     padding: var(--spacing-sm) var(--spacing-xl);
     font-size: 0.9rem;
   }
@@ -315,14 +315,18 @@
 }
 
 
-/* Objective Box (Assuming it's a separate section within about) */
+
 .objective-box {
-  max-width: 900px;
+  max-width: 1050px;
+  height: 20%;
   margin: var(--spacing-xxl) auto;
-  background: var(--bg-section); /* Using global light grey for section background */
+  background: linear-gradient(145deg, var(--bg-section), rgba(var(--bg-section-rgb), 0.8)); 
   padding: var(--spacing-xl) var(--spacing-xxl);
   border-radius: var(--border-radius-md);
-  box-shadow: var(--box-shadow-sm);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+  animation: fadeInSlideUp 1s ease-out forwards; 
+  opacity: 0; 
+  transform: translateY(20px); 
 }
 
 .objective-box h2 {
@@ -354,6 +358,32 @@
   top: 0;
   color: var(--primary-color);
   font-weight: bold;
+}
+
+/* Right Column: Image with Overlay */
+.col-right {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  height: 450px;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--box-shadow-lg);
+  animation: fadeInSlideUp 1s ease-out forwards 0.5s; /* Add animation with delay */
+  opacity: 0; /* Initial state for animation */
+  transform: translateY(20px); /* Initial state for animation */
+}
+
+/* Keyframes for fadeInSlideUp animation */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* TANMAG Fixed Background Section */
