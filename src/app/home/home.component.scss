@@ -331,6 +331,15 @@
   .content-box h1 span {
     font-size: 1rem;
   }
+
+  .objectives-container {
+      padding: 40px; /* Reduce padding for medium screens */
+      margin: 5% 5%; /* Adjust margin */
+  }
+  .objectives-list li {
+      font-size: 15px;
+      padding-left: 20px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -374,6 +383,19 @@
   }
   .content-box h1 span {
     font-size: 0.9rem;
+  }
+
+  .objectives-container {
+      padding: 30px; /* Further reduce padding for small screens */
+      margin: 5% 2%; /* Adjust margin */
+  }
+  .objectives-list li {
+      font-size: 14px;
+      margin-bottom: 15px;
+      padding-left: 18px;
+  }
+  .objectives-list li::before {
+      font-size: 16px;
   }
 }
 
@@ -428,6 +450,18 @@
   .content-box p {
     font-size: 0.8rem;
     line-height: 1.5;
+  }
+
+  .objectives-container {
+      padding: 20px; /* Even smaller padding for very small screens */
+      margin: 5% 1%; /* Adjust margin */
+  }
+  .objectives-list li {
+      font-size: 13px;
+      padding-left: 15px;
+  }
+  .objectives-list li::before {
+      font-size: 14px;
   }
 }
 
