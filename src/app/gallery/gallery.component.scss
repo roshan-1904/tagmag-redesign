@@ -1,0 +1,111 @@
+
+.contact-hero {
+  position: relative;
+  height: 450px;
+  background: url("https://tanmag.org/design/images/banner/5.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 8%;
+  color: #fff;
+  overflow: hidden; /* Ensure waves don't go outside */
+  border-bottom-left-radius: 50px; /* Modern touch */
+  border-bottom-right-radius: 50px; /* Modern touch */
+}
+
+
+.contact-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+
+.hero-content h1 {
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Added text shadow */
+}
+
+
+.hero-content .subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+.breadcrumb {
+  font-size: 15px;
+}
+
+.breadcrumb a {
+  color: #00c853;   
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb span {
+  margin: 0 5px;
+}
+
+/* Wave Animation */
+.wave-animation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Height of the wave */
+  overflow: hidden;
+}
+
+.wave-animation::before,
+.wave-animation::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  border-radius: 40%; /* More pronounced wave effect */
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle wave color */
+  animation: wave 15s infinite linear; /* Slower wave animation */
+}
+
+.wave-animation::after {
+  border-radius: 45%; /* Slightly different wave shape */
+  background-color: rgba(255, 255, 255, 0.15); /* Slightly darker wave */
+  animation: wave 10s infinite linear reverse; /* Reverse animation for second wave */
+}
+
+@keyframes wave {
+  0% {
+    transform: translate(-50%, -75%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotateZ(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    height: 350px;
+    padding-left: 5%;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .hero-content .subtitle {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,295 @@
+
+.contact-hero {
+  position: relative;
+  height: 450px;
+  background: url("https://tanmag.org/design/images/banner/5.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 8%;
+  color: #fff;
+  overflow: hidden; /* Ensure waves don't go outside */
+  border-bottom-left-radius: 50px; /* Modern touch */
+  border-bottom-right-radius: 50px; /* Modern touch */
+}
+
+
+.contact-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+
+.hero-content h1 {
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Added text shadow */
+}
+
+
+.hero-content .subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+.breadcrumb {
+  font-size: 15px;
+}
+
+.breadcrumb a {
+  color: #00c853;   
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb span {
+  margin: 0 5px;
+}
+
+/* Wave Animation */
+.wave-animation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Height of the wave */
+  overflow: hidden;
+}
+
+.wave-animation::before,
+.wave-animation::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  border-radius: 40%; /* More pronounced wave effect */
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle wave color */
+  animation: wave 15s infinite linear; /* Slower wave animation */
+}
+
+.wave-animation::after {
+  border-radius: 45%; /* Slightly different wave shape */
+  background-color: rgba(255, 255, 255, 0.15); /* Slightly darker wave */
+  animation: wave 10s infinite linear reverse; /* Reverse animation for second wave */
+}
+
+@keyframes wave {
+  0% {
+    transform: translate(-50%, -75%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotateZ(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    height: 350px;
+    padding-left: 5%;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .hero-content .subtitle {
+    font-size: 16px;
+  }
+}
+
+.contact-section {
+  background: linear-gradient(135deg, #f0f2f5, #e0e5ec); /* Subtle gradient background */
+  padding: 80px 20px; /* Increased padding */
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* LEFT FORM */
+.form-box {
+  flex: 2;
+  background: #ffffff; /* White background for better contrast */
+  padding: 40px;
+  border-radius: 12px; /* Increased border-radius */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+  border: 1px solid #e0e0e0; /* Subtle border */
+}
+
+.form-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  line-height: 1.2;
+  color: #2c3e50; /* Darker title color */
+}
+
+.form-title .dash {
+  font-weight: 400;
+}
+
+.input-group {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #555; /* Darken label color */
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select { /* Added select to input-group styling */
+  border: none;
+  border-bottom: 2px solid #ccc; /* Lighter border color */
+  background: transparent;
+  padding: 10px 0; /* Increased padding */
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus { /* Added select focus styling */
+  border-color: #0f5d36;
+  box-shadow: 0 2px 5px rgba(15, 93, 54, 0.2); /* Subtle shadow on focus */
+}
+
+.confidential {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777; /* Darken text color */
+}
+
+.submit-btn {
+  margin-top: 30px;
+  background: linear-gradient(45deg, #0f5d36, #00c853); /* Gradient button */
+  color: white;
+  padding: 14px 45px; /* Increased padding */
+  border: none;
+  letter-spacing: 1px; /* Adjusted letter-spacing */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Changed to all for smoother transition */
+  border-radius: 30px; /* Pill-shaped button */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  text-transform: uppercase; /* Uppercase text */
+}
+
+.submit-btn:hover {
+  background: linear-gradient(45deg, #0b4428, #00a042); /* Darker gradient on hover */
+  transform: translateY(-5px); /* More pronounced hover effect */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3); /* Further enhanced shadow on hover */
+}
+
+
+.info-box {
+  flex: 1;
+  background: linear-gradient(135deg, #ffffff, #f0f2f5); /* Subtle gradient for info box */
+  padding: 40px;
+  border-radius: 12px; /* Increased border-radius */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Adjusted box-shadow */
+  border: 1px solid #e0e0e0; /* Subtle border */
+}
+
+.info-box h3 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #0f5d36; /* Changed info box title color */
+}
+
+.info-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: center; /* Vertically align items */
+  padding: 10px 0; /* Added padding to info items */
+  border-bottom: 1px dashed #e0e0e0; /* Dashed border for separation */
+}
+
+.info-item:last-child {
+  border-bottom: none; /* No border for the last item */
+}
+
+.icon {
+  font-size: 28px; /* Increased icon size */
+  color: #0f5d36; /* Changed icon color */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.info-item strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #333; /* Darken strong text color */
+}
+
+.info-item p {
+  margin: 0;
+  line-height: 1.5;
+  color: #666; /* Darken paragraph text color */
+}
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .form-box,
+  .info-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-section {
+    padding: 40px 15px;
+  }
+
+  .form-box, .info-box {
+    padding: 30px;
+  }
+
+  .form-title {
+    font-size: 28px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 12px 20px;
+  }
+}
+
+.map-section {
+  padding: 10px 0px;
+  background: #f4f4f4;
+  margin: 60px 0px 0px 0px;
+}
+
+.map-container {
+  max-width: 1400px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  overflow: hidden;
+}

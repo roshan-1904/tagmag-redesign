@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  scrolled: boolean = false; // New property to track scroll state
-  isMenuOpen: boolean = false; // New property to control mobile menu visibility
+  scrolled: boolean = false; 
+  isMenuOpen: boolean = false; 
 
   constructor(private router: Router) { }
 
@@ -18,7 +18,20 @@ export class NavbarComponent implements OnInit {
 
   goAbout() {
     this.router.navigate(['/about']);
-    this.isMenuOpen = false; // Close menu after navigation
+    this.isMenuOpen = false; 
+  }
+
+  goContact() {
+    this.router.navigate(['/contact']);
+    this.isMenuOpen = false; 
+  }
+  gotogallery() {
+    this.router.navigate(['/gallery']);
+    this.isMenuOpen = false; 
+  }
+  gotoqualitycontrol() {
+    this.router.navigate(['/quality-control']);
+    this.isMenuOpen = false; 
   }
 
   toggleMenu() {
@@ -27,7 +40,6 @@ export class NavbarComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    // Check if the user has scrolled beyond a certain point (e.g., 50px)
     this.scrolled = window.pageYOffset > 50;
   }
 }
